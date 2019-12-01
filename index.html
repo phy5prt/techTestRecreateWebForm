@@ -22,6 +22,32 @@ All label may not all be bold I couldn't tell from picture for this reason I hav
 <!--I dont believe this is the same bootstrap version as in the example -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 
+<!--style here os no lost on refresh-->
+    <style>
+      /*All edges square*/
+      *{border-radius: 0 !important;}
+
+      /* width */
+      ::-webkit-scrollbar {
+        width: 10px;
+      }
+
+      /* Track */
+      ::-webkit-scrollbar-track {
+        background: #f1f1f1;
+      }
+
+      /* Handle */
+      ::-webkit-scrollbar-thumb {
+         background:#888;
+      }
+
+      /* Handle on hover */
+      ::-webkit-scrollbar-thumb:hover {
+        background: #555;
+      }
+    </style>
+
   </head>
   <body>
 
@@ -137,31 +163,6 @@ All label may not all be bold I couldn't tell from picture for this reason I hav
     });
 
 </script>
-
-<style>
-  /*All edges square*/
-  *{border-radius: 0 !important;}
-
-  /* width */
-  ::-webkit-scrollbar {
-    width: 10px;
-  }
-
-  /* Track */
-  ::-webkit-scrollbar-track {
-    background: #f1f1f1;
-  }
-
-  /* Handle */
-  ::-webkit-scrollbar-thumb {
-     background:#888;
-  }
-
-  /* Handle on hover */
-  ::-webkit-scrollbar-thumb:hover {
-    background: #555;
-  }
-</style>
 
     </body>
 </html>
