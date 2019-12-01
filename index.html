@@ -1,0 +1,165 @@
+<!doctype html>
+
+
+<!--Notes
+Bootstrap version seem different
+Scroll top overflow the border of select product group by a pixel and the drag bar is the full width whereas the example has a 1-2px gap on the right.
+All label may not all be bold I couldn't tell from picture for this reason I havent applied overriden the bootstrap with this as default for all labels
+
+-->
+
+ <html lang="en">
+
+  <head>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="Tech Test">
+    <meta name="author" content="Phil Tate">
+
+    <title>Phil Tate Tech Test     </title>
+
+<!--I dont believe this is the same bootstrap version as in the example -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+  </head>
+  <body>
+
+<main>
+
+
+
+  <div class="container">
+    <div class="row">
+      <div class="col-sm">
+        <div class="card-deck mb-3 text-center">
+          <div class="card mb-4 shadow-sm">
+            <div class="card-header">
+              <h5>Customer's Contacts with Sales in the <br> Following Product Groups</h5>
+            </div>
+            <div class="card-body text-left">
+              <div><p><small>The export includes all the contacts who work for customers that have bought from the selected product group(s) in the date range specified.</small></p></div>
+
+              <form>
+                  <div class="form-group mb-1">
+                    <label  class="font-weight-bold  ">Select a product group</label>
+                    <select multiple class="form-control border-secondary bg-light">
+
+                    <!--Have assumed the useful information will be the product codes and that thy are unique so have used them for the value of the options-->
+                      <option>Text needed</option>
+                      <option>Text needed</option>
+                      <option value="1020">1020 - Eclipse Hand Tools</option>
+                      <option value="2010">2010 - Contractors Tools</option>
+                      <option value="2020">2020 - Garden Tools</option>
+                      <option value="2030">2030 - Woodsaws</option>
+                      <option value="2040">2040 - Spear & Jackson Hand Tools</option>
+                    </select>
+                  </div>
+
+                  <div class="form-group mb-0">
+
+                      <label  class="font-weight-bold" >Date Range</label>
+
+                      <div class="form-group d-flex mb-0">
+                        <!--I should not have needed flex-fill and fluid container as I think it should of worked with form group inline but it didnt seem to be doing it-->
+                        <!--Example looks like 0-5 instructions 0-4 so have set range 0-4 -->
+                         <div class="flex-fill">   <input type="range" class="form-control-range " value="3" min="0" max="4" id="dateRangeSlider"></div>
+                        <!--The div means the writing will try and stay on one line-->
+                         <div class="pl-2"> <label > <strong id="dateRangeSliderValueText">3</strong> year(s) plus current  </label></div>
+
+                      </div>
+                  </div>
+
+                <div class="form-group mb-0">
+
+                    <label class="font-weight-bold">(Optionally) Filter by GDPR email status</label>
+
+                    <select class="form-control  mb-2 border-secondary bg-light" >
+                              <option value="0">Default select</option>
+                              <option value="1" selected>Opt-in</option>
+                              <option value="2" >Default select</option>
+                    </select>
+
+
+                    <label  class="font-weight-bold" >(Optionally) Filter by sales Group</label>
+
+                    <select class="form-control mb-2 border-secondary  bg-light">
+                              <!--initialise selector empty-->
+                              <option selected disabled></option>
+                              <option>select 1</option>
+                              <option>select 2</option>
+                    </select>
+
+
+                    <label  class="font-weight-bold">(Optionally) Filter by currency</label>
+                    <select class="form-control mb-2 border-secondary  bg-light">
+                                <!--initialise selector empty-->
+                              <option selected disabled></option>
+                              <option>select 1</option>
+                              <option>select 2</option>
+                    </select>
+
+                </div>
+
+
+
+                <button type="submit" class="btn btn-success  float-right" style="background-color:rgb(40,167,141);">Export</button>
+
+              </form>
+
+
+            </div>
+          </div>
+        </div>
+     </div>
+    <div class="col-sm">
+          <img src="specification (1).png"></img>
+    </div>
+  </div>
+
+
+
+</main>
+
+
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+
+<script>
+
+    var dateRangeSlider = document.getElementById("dateRangeSlider");
+    var dateRangeSliderValueText = document.getElementById("dateRangeSliderValueText");
+
+    dateRangeSlider.addEventListener("change", function(){
+        let dateRangeSliderValue=dateRangeSlider.value;
+        dateRangeSliderValueText.innerText=dateRangeSliderValue;
+    });
+
+</script>
+
+<style>
+  /*All edges square*/
+  *{border-radius: 0 !important;}
+
+  /* width */
+  ::-webkit-scrollbar {
+    width: 10px;
+  }
+
+  /* Track */
+  ::-webkit-scrollbar-track {
+    background: #f1f1f1;
+  }
+
+  /* Handle */
+  ::-webkit-scrollbar-thumb {
+     background:#888;
+  }
+
+  /* Handle on hover */
+  ::-webkit-scrollbar-thumb:hover {
+    background: #555;
+  }
+</style>
+
+    </body>
+</html>
